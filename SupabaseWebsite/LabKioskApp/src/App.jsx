@@ -8,25 +8,33 @@ import Login from './Login';
 import CreateAccount from './CreateAccount';
 import './App.css'; // Import your CSS file (if you have one)
 
-
 function App() {
-    return (
-      <BrowserRouter>
-        <div className="button-container">
-          <Link to="/Login" className="button">
-            Sign In
-          </Link>
-          <Link to="/CreateAccount" className="button">
-            Create Account
-          </Link>
-        </div>
-        <Routes>
-          <Route path="/Login" element={<Login />} />
-          <Route path="/CreateAccount" element={<CreateAccount />} />
-        </Routes>
-      </BrowserRouter>
-    );
-  }
-  
+  const [buttonsVisible, setButtonsVisible] = useState(true);
+
+  const handleButtonClick = () => {
+    setButtonsVisible(false);
+  };
+
+  return (
+    <BrowserRouter>
+      <div className="button-container">
+        {buttonsVisible && (
+          <>
+            <Link to="/Login" className="button" onClick={handleButtonClick}>
+              Sign In
+            </Link>
+            <Link to="/CreateAccount" className="button" onClick={handleButtonClick}>
+              Create Account
+            </Link>
+          </>
+        )}
+      </div>
+      <Routes>
+        <Route path="/Login" element={<Login />} />
+        <Route path="/CreateAccount" element={<CreateAccount />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 export default App;

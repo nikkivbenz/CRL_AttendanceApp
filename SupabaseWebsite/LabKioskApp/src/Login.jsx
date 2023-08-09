@@ -19,13 +19,6 @@ function Login() {
           <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
           <button type="submit">Sign In</button>
         </form>
-        <div className="button-container">
-          <div>
-            <Link to="/CreateAccount" className="button">
-              Create Account
-            </Link>
-          </div>
-        </div>
       </div>
     );
   }
