@@ -1,5 +1,5 @@
 #root {
-  max-width: 1280px;
+  max-width: 1680px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -53,4 +53,27 @@
 
 .center-container {
   text-align: center;
+}
+
+
+.button-container {
+  display: flex;
+  flex-direction: column; /* Display items in a column */
+}
+
+
+.button {
+  background-color: #3498db;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  margin: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #2980b9;
 }
